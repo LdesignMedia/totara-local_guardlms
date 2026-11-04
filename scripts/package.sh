@@ -7,7 +7,7 @@ output="${1:?Usage: package.sh /absolute/output/guardlms-totara-0.1.0.zip}"
 stage="$(mktemp -d)"
 trap 'rm -rf "$stage"' EXIT
 mkdir -p "$stage/guardlms" "$(dirname "$output")"
-for item in callback.php classes cli db index.php lang lib.php settings.php version.php LICENSE; do
+for item in callback.php classes cli db index.php lang lib.php settings.php version.php LICENSE docs; do
     cp -R "$root/$item" "$stage/guardlms/"
 done
 cp "$root/README.md" "$stage/guardlms/README.md"
