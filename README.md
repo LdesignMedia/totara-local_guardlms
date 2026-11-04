@@ -19,7 +19,7 @@ plugin-directory/advisory identities to Totara plugins.
 
 ## Install on a disposable site first
 
-1. Deploy the matching GuardLMS receiver/backend and frontend [changes](https://github.com/LdesignMedia/guardlms/tree/feature-totara-connector). It adds `/api/externalpush/totara` and `/connect/totara`. No new database
+1. Deploy the matching GuardLMS receiver/backend and frontend [changes](https://github.com/LdesignMedia/guardlms/pull/2877). It adds `/api/externalpush/totara` and `/connect/totara`. No new database
    migration is required. An older GuardLMS deployment does not accept Totara.
 2. Clone `LdesignMedia/totara-local_guardlms` and create the installable ZIP with
    `./scripts/package.sh /absolute/output/guardlms-totara-0.1.0.zip`. Extract its
@@ -100,12 +100,12 @@ not prove compatibility with a real Totara runtime. CI runs these checks and PHP
 syntax validation on PHP 8.1–8.4 and packages the plugin.
 
 The GuardLMS receiver/frontend checks and real-runtime Docker/browser harness
-live in [GuardLMS integrations/totara](https://github.com/LdesignMedia/guardlms/tree/main/integrations/totara).
+live in [GuardLMS integrations/totara](https://github.com/LdesignMedia/guardlms/tree/4d8cf0031d04e94a737c492e6d7087cdc023ca63/integrations/totara).
 
 ## Real Totara E2E verification — pending
 
 No licensed Totara runtime is available. Follow the
-[GuardLMS E2E harness guide](https://github.com/LdesignMedia/guardlms/blob/main/integrations/totara/README.md)
+[GuardLMS E2E harness guide](https://github.com/LdesignMedia/guardlms/blob/4d8cf0031d04e94a737c492e6d7087cdc023ca63/integrations/totara/README.md)
 when one becomes available. Set `TOTARA_PLUGIN_ROOT` to this checkout and
 `TOTARA_SOURCE_ROOT` to the licensed Totara source. The harness exercises the real
 installed plugin against an isolated GuardLMS receiver. Its consent-code fixture
